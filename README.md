@@ -1,7 +1,6 @@
 # React-Firebase-Retrieve-And-Download
 
 這些內容firebase官方網站都有教學，但有時候還是不知道怎麼做(畢竟我的母語不是英文)。
-我懂這種學習與找資料的辛苦。
 我把代碼整理好讓大家可以作業。
 可以透過按鈕將資料庫下載成json檔案並且之後再更新回collection中。
 
