@@ -1,7 +1,7 @@
 // Upload Json to Firestore
 import { addDoc, collection, updateDoc, doc } from "firebase/firestore";
 import { useEffect, useState } from "react";
-import { db } from "../lib/init-firebase";
+import { db } from "../../lib/init-firebase";
 import React from "react";
 import Dropdown from "./dropdownName";
 

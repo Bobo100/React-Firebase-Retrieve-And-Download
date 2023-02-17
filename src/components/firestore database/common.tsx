@@ -1,5 +1,5 @@
 import { collection, getDocs } from "firebase/firestore";
-import { db } from "../lib/init-firebase";
+import { db } from "../../lib/init-firebase";
 import { createElement } from "react";
 /**
  * 讓useState獲取資料庫的內容

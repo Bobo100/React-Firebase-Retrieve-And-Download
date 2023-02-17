@@ -1,0 +1,11 @@
+ul {
+  width: 960px;
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+}
+
+li {
+  padding: 10px;
+  border-bottom: 1px solid black;
+}/*# sourceMappingURL=storageUpload.css.map */

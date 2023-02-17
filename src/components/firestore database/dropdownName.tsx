@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import uuid from "react-uuid";
 
-const Dropdown = (props: { onSelect: (collectionName: string) => void }) => {
+const DropdownFirestoreCollectionName = (props: { onSelect: (collectionName: string) => void }) => {
     const [collections, setCollections] = useState([]);
 
     const [selectedOption, setSelectedOption] = useState("");
@@ -12,7 +12,7 @@ const Dropdown = (props: { onSelect: (collectionName: string) => void }) => {
             .then((data) => {
                 setCollections(data);
             });
-        console.log("update")
+        // console.log("update")
     }, []);
 
     return (
@@ -33,4 +33,4 @@ const Dropdown = (props: { onSelect: (collectionName: string) => void }) => {
 };
 
 
-export default Dropdown;
+export default DropdownFirestoreCollectionName;
