@@ -2,7 +2,7 @@ import React, { Fragment, useEffect, useState } from "react";
 import { getStorage, ref, uploadBytesResumable, getDownloadURL, UploadTask, listAll } from "firebase/storage";
 import uuid from "react-uuid";
 import "./css/storageUpload.css"
-import { DropdownStorageFolderName } from "./dropdownStorageFolderName";
+import { DropdownStorageFolderName } from "./practice progress/dropdownStorageFolderName";
 
 // 傳送單個檔案
 // const storage = getStorage();
@@ -40,19 +40,6 @@ import { DropdownStorageFolderName } from "./dropdownStorageFolderName";
 
 const storage = getStorage();
 
-
-async function listFiles() {
-    // List all files in the bucket
-    const storageRef = ref(storage);
-    listAll(storageRef).then((res) => {
-        res.prefixes.forEach((folderRef) => {
-            console.log("Folder name:", folderRef.name);
-        });
-    }).catch((error) => {
-        console.log("Error listing folders:", error);
-    });
-}
-
 export function StorageUpload() {
     const [selectedFiles, setSelectedFiles] = useState<FileList | null>(null);
     const [progress, setProgress] = useState<number[]>([]);
@@ -80,10 +67,9 @@ export function StorageUpload() {
         try {
             const newUploadTasks: UploadTask[] = [];
             const uploadPromises = Array.from(selectedFiles).map(async (file, i) => {
-                const storageRef = ref(storage, `${storageFolderName}${folderName}/${file.name}`);
+                const storageRef = ref(storage, `${storageFolderName}/${folderName}/${file.name}`);
                 const uploadTask = uploadBytesResumable(storageRef, file);
                 newUploadTasks.push(uploadTask);
-
 
                 // Register three observers:
                 // 1. 'state_changed' observer, called any time the state changes
