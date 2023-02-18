@@ -22,37 +22,3 @@ function App() {
 }
 
 export default App;
-
-
-
-const folderList = {
-  "test1": [
-    {
-      "name": "test2",
-      "level": 1,
-      "subfolders": [
-        {
-          "name": "test333",
-          "level": 2,
-          "subfolders": []
-        },
-        {
-          "name": "test444",
-          "level": 2,
-          "subfolders": [
-            {
-              "name": "test555",
-              "level": 3,
-              "subfolders": []
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "test3",
-      "level": 1,
-      "subfolders": []
-    }
-  ]
-};
